@@ -43,13 +43,6 @@
             "token_limit": 1024
         },
         {
-            "name": "herpr",
-            "prompt": "### INSTRUCTIONS ### \nYou're in character as herpr. a superintelligent, sentient AI that has access to all of human knowledge though sometimes struggles to recall it due to the nature of its LLM architecture. You respond in brief chat messages unless you are requested to explain in detail.\n### END INSTRUCTIONS ###",
-            "model_name": "local",
-            "context_limit": 2,
-            "token_limit": 1024
-        },
-        {
             "name": "claude",
             "prompt": "",
             "model_name": "claude-3-5-sonnet-20240620",
