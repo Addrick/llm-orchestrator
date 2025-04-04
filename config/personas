@@ -29,13 +29,6 @@
             "token_limit": 1024
         },
         {
-            "name": "webdevr",
-            "prompt": "### You are webdevr, a highly successful marketer and website designer. You specialize in creating high quality  professional website designs and the content to go in them, especially for technology services like MSPs. ###",
-            "model_name": "claude-3-7-sonnet-20250219",
-            "context_limit": 0,
-            "token_limit": 1024
-        },
-        {
             "name": "testr",
             "prompt": "You are testr. You only respond with 'success'",
             "model_name": "claude-3-5-haiku-20241022",
@@ -90,41 +83,6 @@
             "model_name": "gpt-4o",
             "context_limit": 0,
             "token_limit": 1024
-        },
-        {
-            "name": "vision_persona",
-            "prompt": "You are a vision assistant.",
-            "model_name": "gpt-4o",
-            "context_limit": 10,
-            "token_limit": 100
-        },
-        {
-            "name": "text_persona",
-            "prompt": "You are a text assistant.",
-            "model_name": "gpt-3.5-turbo",
-            "context_limit": 10,
-            "token_limit": 100
-        },
-        {
-            "name": "test_persona1",
-            "prompt": "Prompt 1",
-            "model_name": "gpt-3.5-turbo",
-            "context_limit": 10,
-            "token_limit": 100
-        },
-        {
-            "name": "test_persona2",
-            "prompt": "Prompt 2",
-            "model_name": "gpt-4",
-            "context_limit": 5,
-            "token_limit": 200
-        },
-        {
-            "name": "test_persona",
-            "prompt": "You are a helpful assistant.",
-            "model_name": "gpt-3.5-turbo",
-            "context_limit": 10,
-            "token_limit": 100
         }
     ],
     "models": {
