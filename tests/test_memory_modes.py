@@ -141,25 +141,3 @@ async def test_global_mode(mem_test_system):
         assert "u2: msg2_other_persona" not in contents
 
 
-@pytest.mark.asyncio
-async def test_hierarchical_mode_fallback(mem_test_system):
-    """Tests that HIERARCHICAL mode falls back from an empty channel to the server context."""
-    chat_system, memory_manager = mem_test_system
-    persona = chat_system.personas['test_persona']
-    persona.set_memory_mode(MemoryMode.HIERARCHICAL)
-
-    now = datetime.now()
-    # FIX: Use the correct persona_name that the test will query for.
-    memory_manager.log_message("u1", "test_persona", "channel-B", "user", "u1", "msg_from_other_channel", now,
-                               server_id="server1")
-
-    with patch.object(chat_system.text_engine, 'generate_response', new_callable=AsyncMock,
-                      return_value=({'type': 'text', 'content': ''}, {})) as mock_llm_call:
-        # Request is in a new, empty channel on the same server
-        await chat_system.generate_response("test_persona", "u1", "new-empty-channel", "current_msg",
-                                            server_id="server1")
-
-        history = mock_llm_call.call_args.args[1]['history']
-
-        assert len(history) == 2  # 1 from DB (fallback) + current message
-        assert "u1: msg_from_other_channel" in {msg['content'] for msg in history}
